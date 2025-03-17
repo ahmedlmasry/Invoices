@@ -48,10 +48,10 @@
                                     class="fas fa-plus"></i>&nbsp; اضافة فاتورة</a>
 
 
-{{--                    @can('تصدير EXCEL')--}}
-{{--                        <a class="modal-effect btn btn-sm btn-primary" href="{{ url('invoices-export') }}"--}}
-{{--                           style="color:white"><i class="fas fa-file-download"></i>&nbsp;تصدير اكسيل</a>--}}
-{{--                    @endcan--}}
+                    @can('تصدير EXCEL')
+                        <a class="modal-effect btn btn-sm btn-primary" href="{{ url('invoices-export') }}"
+                           style="color:white"><i class="fas fa-file-download"></i>&nbsp;تصدير اكسيل</a>
+                    @endcan
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

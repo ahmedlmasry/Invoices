@@ -38,14 +38,14 @@ Route::group(['middleware' => ['auth', AutoCheckPermission::class]], function ()
     Route::get('invoices-unpaid', [InvoiceController::class, 'unPaidInvoices'])->name('invoices-unpaid');
     Route::get('invoices-partial', [InvoiceController::class, 'partialInvoices'])->name('invoices-partial');
     Route::get('invoices/print/{id}', [InvoiceController::class, 'printInvoice'])->name('print-invoice');
-    Route::get('invoices-export', [InvoiceController::class, 'exportInvoice']);
+    Route::get('invoices-export', [InvoiceController::class, 'exportInvoice'])->name('export-invoice');
     Route::get('/mark-as-read', [InvoiceController::class,'markAsRead'])->name('mark-as-read');
     Route::resource('invoice-archive', InvoiceArchiveController::class);
 
-    Route::get('invoices-reports', [InvoicesReportController::class, 'index']);
+    Route::get('invoices-reports', [InvoicesReportController::class, 'index'])->name('invoices-reports');
     Route::post('invoices-reports/search', [InvoicesReportController::class, 'search']);
 
-    Route::get('customers-reports', [CustomersReportController::class, 'index']);
+    Route::get('customers-reports', [CustomersReportController::class, 'index'])->name('customers-reports');
     Route::post('customers-reports/search', [CustomersReportController::class, 'search']);
 
     Route::resource('users', UserController::class);
